@@ -8,3 +8,9 @@
   <p>Страница на HTML5</p>
  </body>
 </html>
+
+пуск 50 min setTimeout(function myd() {$('#studio-task-view-load-start .type-button').click()},3000000); 
+пауза 20 min setTimeout(function myd() {$('.type-submit:last').click()},1200000);
+
+10min - 600000
+5min - 300000
