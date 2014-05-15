@@ -1,0 +1,79 @@
+// Скрипт для загрузки разных изображений, в зависимости от плотности пикселей и разрешения экрана
+
+var about_page = $('.about'),
+      location_page = $('.location'),
+      main_page = $('.main'),
+      pixel_ratio = (typeof window['devicePixelRatio'] !== 'undefined') ? window['devicePixelRatio'] : 1,
+      schedule_page = $('.schedule'),
+      screen = window.screen.width;
+  if (pixel_ratio >= 2)
+  {
+    if ((screen >= 640) && (screen < 1024))
+    {
+      about_page.addClass('about-1024').css('background-image','url(/rs/img/yf-about-header-1024.jpg)');
+      main_page.addClass('main-1024').css('background-image','url(/rs/img/yf-main-header-1024.jpg)');
+    }
+    else if (screen < 640)
+    {
+      about_page.addClass('about-640').css('background-image','url(/rs/img/yf-about-header-640.jpg)');
+      location_page.addClass('location-640').css('background-image','url(/rs/img/yf-location-header-640.jpg)');
+      main_page.addClass('main-640').css('background-image','url(/rs/img/yf-main-header-640.jpg)');
+      schedule_page.addClass('schedule-640').css('background-image','url(/rs/img/yf-schedule-header-640.jpg)');
+    }
+  }
+  else
+  {
+    if (screen <= 640)
+    {
+      about_page.addClass('about-640').css('background-image','url(/rs/img/yf-about-header-640.jpg)');
+      location_page.addClass('location-640').css('background-image','url(/rs/img/yf-location-header-640.jpg)');
+      main_page.addClass('main-640').css('background-image','url(/rs/img/yf-main-header-640.jpg)');
+      schedule_page.addClass('schedule-640').css('background-image','url(/rs/img/yf-schedule-header-640.jpg)');
+    }
+    else if ((screen > 640) && (screen <= 1024))
+    {
+      about_page.addClass('about-1024').css('background-image','url(/rs/img/yf-about-header-1024.jpg)');
+      main_page.addClass('main-1024').css('background-image','url(/rs/img/yf-main-header-1024.jpg)');
+    }
+  }
+
+
+
+// Тоже самое только на css
+
+
+@media (-webkit-min-device-pixel-ratio:2) and (min-device-width:640px) and (max-device-width:1023px),
+       (min-resolution:192dpi) and (min-device-width:640px) and (max-device-width:1023px),
+       (-webkit-max-device-pixel-ratio:1.5) and (min-device-width:641px) and (max-device-width:1024px),
+       (max-resolution:191dpi) and (min-device-width:641px) and (max-device-width:1024px) {
+
+  .rs-directory-header-wrap.about {
+    background:url(/rs/img/yf-about-header-1024.jpg) center top no-repeat;
+  }
+
+  .rs-directory-header-wrap.main {
+    background:url(/rs/img/yf-main-header-1024.jpg) center top no-repeat;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:2) and (max-device-width:639px),
+       (min-resolution:192dpi) and (max-device-width:639px),
+       (-webkit-max-device-pixel-ratio:1.5) and (max-device-width:640px),
+       (max-resolution:191dpi) and (max-device-width:640px) {
+
+  .rs-directory-header-wrap.about {
+    background:url(/rs/img/yf-about-header-640.jpg) center top no-repeat;
+  }
+
+  .rs-directory-header-wrap.location {
+      background:url(/rs/img/yf-location-header-640.jpg) center top no-repeat;
+    }
+
+  .rs-directory-header-wrap.main {
+    background:url(/rs/img/yf-main-header-640.jpg) center top no-repeat;
+  }
+
+  .rs-directory-header-wrap.schedule {
+    background:url(/rs/img/yf-schedule-header-640.jpg) center top no-repeat;
+  }
+}
