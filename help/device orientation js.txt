@@ -1,0 +1,13 @@
+function change_orientation() {
+  $(window).on('orientationchange', function(event)
+  {
+    if (orientation == '90' || orientation == '-90')
+    {
+      alert('landscape');
+    }
+    if (orientation == '0' || orientation == '180')
+    {
+        alert('portrait');
+    }
+  });
+}
